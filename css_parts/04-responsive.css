@@ -1,0 +1,11 @@
+@media (max-width: 500px) {
+    body { padding: 10px; margin: 10px auto; }
+    .top-right-controls { top: 10px; right: 10px; }
+    .control-btn { padding: 8px 10px; font-size: 12px; }
+    .grid, .grid-venda { grid-template-columns: 1fr; }
+    .user-status-display { display: none; }
+    
+    .dossier-org-grid, .dossier-people-grid {
+         grid-template-columns: 1fr; 
+    }
+}
