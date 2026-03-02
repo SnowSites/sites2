@@ -754,7 +754,13 @@ const addDossierEntry = async (vendaData, dadosAntigos = null) => {
     } catch (err) {
         console.error("Erro ao adicionar/atualizar dossiê:", err);
         if(err.code !== "PERMISSION_DENIED") {
-            showToast(`Erro ao sincronizar dossiê: ${err.message}`, "error");
+            const code = String(err?.code || '').toUpperCase();
+const msg = String(err?.message || '').toLowerCase();
+const isDenied = code.includes('PERMISSION') || msg.includes('permission denied');
+
+if (!isDenied) {
+  showToast(`Erro ao sincronizar dossiê: ${err.message}`, "error");
+}
         }
     }
 };
@@ -816,7 +822,13 @@ const updateDossierEntryOnEdit = async (oldNome, oldOrg, newVendaData) => {
     } catch (err) {
         console.error("Erro ao sincronizar edição da venda com dossiê:", err);
         if(err.code !== "PERMISSION_DENIED") {
-            showToast(`Erro ao sincronizar dossiê: ${err.message}`, "error");
+            const code = String(err?.code || '').toUpperCase();
+const msg = String(err?.message || '').toLowerCase();
+const isDenied = code.includes('PERMISSION') || msg.includes('permission denied');
+
+if (!isDenied) {
+  showToast(`Erro ao sincronizar dossiê: ${err.message}`, "error");
+}
         }
     }
 };
