@@ -2450,7 +2450,29 @@ const migrateVeiculosData = async () => {
 // ===========================================
 
 // **** FIM DAS FUNÇÕES DO DOSSIÊ (v12) ****
+// ===== INICIAR TEMA SALVO =====
+(function () {
 
+  const savedTheme = localStorage.getItem('theme');
+
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark');
+    updateLogoAndThemeButton(true);
+
+  } else if (savedTheme === 'light') {
+    document.body.classList.remove('dark');
+    updateLogoAndThemeButton(false);
+
+  } else {
+    // Primeiro acesso: segue a preferência do sistema
+    const prefersDark = window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    document.body.classList.toggle('dark', prefersDark);
+    updateLogoAndThemeButton(prefersDark);
+  }
+
+})();
 const toggleTheme = () => {
     const isDarkMode = document.body.classList.toggle('dark');
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
