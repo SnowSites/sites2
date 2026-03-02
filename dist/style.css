@@ -640,3 +640,97 @@ textarea:focus {
   border: 1px solid #4f46e5;
   box-shadow: 0 0 0 3px rgba(79,70,229,0.15);
 }
+/* ===== THEME PREMIUM (CLARO/ESCURO) ===== */
+:root{
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: rgba(17,24,39,0.12);
+
+  --primary: #4f46e5;
+  --primary-2: rgba(79,70,229,0.14);
+
+  --shadow: 0 10px 28px rgba(0,0,0,0.12);
+  --shadow-hover: 0 14px 34px rgba(0,0,0,0.18);
+}
+
+body.dark{
+  --bg: #0b1020;
+  --card: #0f172a;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: rgba(229,231,235,0.12);
+
+  --primary: #8b5cf6;
+  --primary-2: rgba(139,92,246,0.18);
+
+  --shadow: 0 10px 28px rgba(0,0,0,0.45);
+  --shadow-hover: 0 14px 34px rgba(0,0,0,0.55);
+}
+
+/* Base */
+body{
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* Cards principais */
+.card,
+.mainCard,
+.adminPanel,
+.historyCard,
+.dossierCard{
+  background: var(--card) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.card:hover,
+.mainCard:hover,
+.adminPanel:hover,
+.historyCard:hover,
+.dossierCard:hover{
+  box-shadow: var(--shadow-hover) !important;
+}
+
+/* Textos auxiliares */
+small, .muted, .hint, .subtext{
+  color: var(--muted) !important;
+}
+
+/* Inputs */
+input, select, textarea{
+  background: transparent !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+}
+
+input::placeholder, textarea::placeholder{
+  color: var(--muted) !important;
+}
+
+input:focus, select:focus, textarea:focus{
+  outline: none !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px var(--primary-2) !important;
+}
+
+/* Tabelas */
+table, th, td{
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+thead th{
+  background: rgba(0,0,0,0.04);
+}
+body.dark thead th{
+  background: rgba(255,255,255,0.06);
+}
+
+/* Botões (sem quebrar cores que você já usa) */
+button{
+  border-radius: 10px;
+  font-weight: 700;
+}
