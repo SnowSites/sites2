@@ -734,3 +734,10 @@ button{
   border-radius: 10px;
   font-weight: 700;
 }
+/* ===== TRANSIÇÃO SUAVE DO TEMA ===== */
+body, 
+.card, .mainCard, .adminPanel, .historyCard, .dossierCard,
+input, select, textarea, button,
+table, th, td {
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
