@@ -593,3 +593,50 @@ body.dark #imageLightboxModal {
   }
 
 }
+/* ===== DASHBOARD MODERNO ===== */
+
+.card,
+.mainCard,
+.adminPanel,
+.historyCard,
+.dossierCard {
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover,
+.mainCard:hover,
+.adminPanel:hover,
+.historyCard:hover,
+.dossierCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+button {
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+input,
+select,
+textarea {
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.1);
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border: 1px solid #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79,70,229,0.15);
+}
