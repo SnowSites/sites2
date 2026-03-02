@@ -544,5 +544,52 @@ body.dark #imageLightboxModal {
     
     .dossier-org-grid, .dossier-people-grid {
          grid-template-columns: 1fr; 
+      
     }
+  
+}
+/* ===== MOBILE RESPONSIVO ===== */
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .card,
+  .mainCard,
+  .adminPanel,
+  .historyCard,
+  .dossierCard {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 10px 0 !important;
+    padding: 15px !important;
+  }
+
+  .row,
+  .form-row,
+  .input-group {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    width: 100% !important;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
 }
